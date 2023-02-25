@@ -9,7 +9,12 @@ export const Activity = () => {
   return (
     <div className={clsx(styles.activity)}>
       <Chart />
-      <Select className={styles.select} title={years[1]} options={years} />
+      <Select
+        showTitle={false}
+        className={styles.select}
+        title={years[1]}
+        options={years}
+      />
     </div>
   )
 }
