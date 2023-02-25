@@ -1,0 +1,29 @@
+.admin {
+  .toolbar {
+    padding: 20px 30px;
+    border-radius: 14px;
+    background-color: var(--background);
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+
+      li {
+        cursor: pointer;
+        padding: 0 14px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+
+        padding-bottom: 10px;
+      }
+
+      .active {
+        color: var(--green);
+        border-bottom: 2px solid var(--green);
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.settings {
+  padding: 20px;
+  background-color: var(--background);
+  border-radius: 14px;
+
+  .toolbar {
+    margin-bottom: 30px;
+
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+
+      li {
+        cursor: pointer;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 23px;
+        color: var(--gray);
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 10px;
+      }
+
+      .active {
+        color: var(--green);
+        position: relative;
+
+        border-bottom: 2px solid var(--green);
+      }
+    }
+  }
+
+  .buttons {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 33px;
+
+    .save {
+      width: 260px;
+    }
+
+    .delete {
+      color: var(--red);
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 23px;
+      border: 0;
+      outline: 0;
+      background: none;
+    }
+  }
+}

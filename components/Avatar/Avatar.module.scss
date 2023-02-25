@@ -1,0 +1,15 @@
+.avatar {
+  min-width: 40px;
+  min-height: 40px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  img {
+    border-radius: 10px;
+
+    object-fit: cover;
+  }
+}

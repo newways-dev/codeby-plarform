@@ -1,0 +1,13 @@
+.points {
+  display: flex;
+  align-items: center;
+  margin-top: -20px;
+
+  .tags {
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'Google Sans';
+  src: local('Google Sans Medium Italic'), local('GoogleSans-MediumItalic'),
+    url('../public/font/GoogleSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Google Sans Medium';
+  src: local('Google Sans Medium Italic'), local('GoogleSans-MediumItalic'),
+    url('../public/font/GoogleSans-MediumItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Google Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.paginationButtons {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+
+  a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 2px solid var(--gray);
+    cursor: pointer;
+
+    @media screen and (max-width: 450px) {
+      padding: 6px;
+      margin: 4px;
+    }
+  }
+}
+
+.activeButton {
+  a {
+    color: var(--background);
+    background: var(--gray);
+  }
+}
+
+:root {
+  --background: #1a1c22;
+  --background-secondary: #282c35;
+
+  --green: #9fef00;
+  --gray: #9e9e9e;
+  --blue: #0086ff;
+  --red: #ff3e3e;
+  --orange: #ffaf00;
+}
