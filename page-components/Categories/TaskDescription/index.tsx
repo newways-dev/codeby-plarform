@@ -29,6 +29,8 @@ export const TaskDescription = ({
       <div className={styles.flag}>
         <div className={styles.inputContainer}>
           <Input
+            value={'test value'}
+            onChange={() => {}}
             status='default'
             placeholder='Флаг'
             type='text'
