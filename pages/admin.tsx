@@ -1,15 +1,28 @@
 import clsx from 'clsx'
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import { withLayout } from '@/layout/Layout'
 import { AdminPages } from '@/types/admin'
-import { AdminInfo } from '@/page-components'
 import styles from '../styles/Admin.module.scss'
+import { Select } from '@/components'
+import { AdminInfo } from '@/page-components'
 
 const Admin = () => {
   const [page, setPage] = useState<AdminPages>('Инфо')
+  const [mobilePage, setMobilePage] = useState<string>('Инфо' as AdminPages)
+  const links = ['Инфо', 'Cписок юзеров']
 
   return (
     <div className={styles.admin}>
+      <div className={styles.mobileToolbar}>
+        <Select
+          active={mobilePage}
+          setActive={setMobilePage}
+          variant='black'
+          showTitle={false}
+          title={mobilePage}
+          options={links}
+        />
+      </div>
       <div className={styles.toolbar}>
         <ul>
           <li

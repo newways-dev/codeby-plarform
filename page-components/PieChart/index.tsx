@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { PieChart, Pie, Cell } from 'recharts'
 
-export const Chart = () => {
+export const ChartPie = () => {
   const [loaded, setLoaded] = useState<boolean>(false)
   const data = [
     { name: 'Group A', value: 900 },

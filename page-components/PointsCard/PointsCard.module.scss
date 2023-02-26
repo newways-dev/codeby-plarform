@@ -6,7 +6,14 @@
   padding-left: 20px;
   padding-bottom: 10px;
 
+  max-height: 98px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
   .title {
+    margin-top: -5px;
     color: var(--gray);
     font-weight: 500;
     font-size: 18px;

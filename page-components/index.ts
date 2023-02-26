@@ -2,6 +2,8 @@ export * from './Card'
 export * from './NewsCard'
 export * from './AuthCard'
 export * from './PointsCard'
+export * from './PieChart'
+export * from './ChartWithTags'
 
 export * from './Dashboard/Progress'
 export * from './Dashboard/News'

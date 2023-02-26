@@ -12,6 +12,7 @@ export const Activity = () => {
         <Chart />
       </div>
       <Select
+        variant='gray'
         showTitle={false}
         className={styles.select}
         title={years[1]}

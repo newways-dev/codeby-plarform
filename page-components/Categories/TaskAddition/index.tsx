@@ -25,6 +25,7 @@ export const TaskAddition = ({
           <span>{timeLeft}</span>
         </div>
         <Select
+          variant='gray'
           showTitle
           className={styles.files}
           title='Файлы'
@@ -33,6 +34,7 @@ export const TaskAddition = ({
         <div className={styles.help}>
           {help.map((item, index) => (
             <Select
+              variant='gray'
               showTitle
               key={index}
               title={`Подсказка №${index + 1}`}
