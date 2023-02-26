@@ -3,10 +3,14 @@
   position: relative;
   padding-top: 50px;
 
+  .chart {
+    margin-left: -30px;
+  }
+
   .select {
     position: absolute;
     right: 20px;
-    top: -30px;
+    top: -45px;
     width: 120px;
   }
 }

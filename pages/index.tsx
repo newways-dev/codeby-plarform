@@ -11,7 +11,7 @@ import clsx from 'clsx'
 import styles from '../styles/Home.module.scss'
 
 const Home = () => {
-  const complete = false
+  const complete = true
 
   return (
     <div className={styles.homeGrid}>

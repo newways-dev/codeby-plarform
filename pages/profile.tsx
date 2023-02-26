@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { withLayout } from '@/layout/Layout'
 import {
   Activity,
@@ -7,11 +8,10 @@ import {
   Points,
   Progress,
 } from '@/page-components'
-import clsx from 'clsx'
 import styles from '../styles/Profile.module.scss'
 
 const Profile = () => {
-  const complete = false
+  const complete = true
 
   return (
     <div className={styles.profile}>

@@ -10,6 +10,6 @@ export * from './UI/Select'
 
 export * from './Search'
 export * from './Notification'
-export * from './Avatar'
+export * from './Profile'
 export * from './MobileSearch'
 export * from './MobileMenu'

@@ -8,7 +8,9 @@ export const Activity = () => {
 
   return (
     <div className={clsx(styles.activity)}>
-      <Chart />
+      <div className={styles.chart}>
+        <Chart />
+      </div>
       <Select
         showTitle={false}
         className={styles.select}

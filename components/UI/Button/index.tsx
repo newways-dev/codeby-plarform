@@ -11,17 +11,23 @@ export interface ButtonProps
   text: string
 }
 
-export const Button = ({ className, variant, text }: ButtonProps) => {
+export const Button = ({ className, variant, text, ...props }: ButtonProps) => {
   switch (variant) {
     case 'green':
       return (
-        <button className={clsx(className, styles.button, styles.green)}>
+        <button
+          {...props}
+          className={clsx(className, styles.button, styles.green)}
+        >
           {text}
         </button>
       )
     case 'white':
       return (
-        <button className={clsx(className, styles.button, styles.white)}>
+        <button
+          {...props}
+          className={clsx(className, styles.button, styles.white)}
+        >
           {text}
         </button>
       )

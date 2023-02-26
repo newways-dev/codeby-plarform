@@ -72,7 +72,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
         <ul
           className={clsx(styles.routes, { [styles.mobileRoutes]: openMenu })}
         >
-          <li>
+          <li
+            onClick={() => {
+              openMenu && dispatch(setOpenMenu(false))
+            }}
+          >
             <Link
               href={routes[0].path}
               className={clsx(
@@ -100,7 +104,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
               />
             </Link>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              openMenu && dispatch(setOpenMenu(false))
+            }}
+          >
             <Link
               href={routes[1].path}
               className={clsx(
@@ -128,7 +136,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
               />
             </Link>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              openMenu && dispatch(setOpenMenu(false))
+            }}
+          >
             <Link
               href={routes[2].path}
               className={clsx(
@@ -164,7 +176,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
               />
             </Link>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              openMenu && dispatch(setOpenMenu(false))
+            }}
+          >
             <Link
               href={routes[3].path}
               className={clsx(
@@ -198,7 +214,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
             })}
           >
             {role === 'admin' && (
-              <li>
+              <li
+                onClick={() => {
+                  openMenu && dispatch(setOpenMenu(false))
+                }}
+              >
                 <Link
                   href={routes[4].path}
                   className={clsx(
@@ -227,7 +247,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 </Link>
               </li>
             )}
-            <li>
+            <li
+              onClick={() => {
+                openMenu && dispatch(setOpenMenu(false))
+              }}
+            >
               <Link
                 href={routes[5].path}
                 className={clsx(
@@ -255,7 +279,12 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 />
               </Link>
             </li>
-            <li className={clsx({ [styles.mobileSidebarRoute]: openMenu })}>
+            <li
+              onClick={() => {
+                openMenu && dispatch(setOpenMenu(false))
+              }}
+              className={clsx({ [styles.mobileSidebarRoute]: openMenu })}
+            >
               <Link href={routes[6].path} className={clsx(styles.link)}>
                 <div>{routes[6].icon}</div>
                 {open && <p>{routes[6].name}</p>}

@@ -5,7 +5,6 @@ import { NoComplete } from './NoComplete'
 export const Complete = () => {
   return (
     <div className={styles.complete}>
-      {/* <CompleteCard title='Администрирование' date='1 неделю назад' />
       <CompleteCard title='Администрирование' date='1 неделю назад' />
       <CompleteCard title='Администрирование' date='1 неделю назад' />
       <CompleteCard title='Администрирование' date='1 неделю назад' />
@@ -13,8 +12,9 @@ export const Complete = () => {
       <CompleteCard title='Администрирование' date='1 неделю назад' />
       <CompleteCard title='Администрирование' date='1 неделю назад' />
       <CompleteCard title='Администрирование' date='1 неделю назад' />
-      <CompleteCard title='Администрирование' date='1 неделю назад' /> */}
-      <NoComplete />
+      <CompleteCard title='Администрирование' date='1 неделю назад' />
+      <CompleteCard title='Администрирование' date='1 неделю назад' />
+      {/* <NoComplete /> */}
     </div>
   )
 }

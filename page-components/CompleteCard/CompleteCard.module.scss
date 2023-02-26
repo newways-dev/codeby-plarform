@@ -13,17 +13,23 @@
     align-items: center;
     gap: 12px;
 
-    .title {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 18px;
-    }
+    .info {
+      @media screen and (max-width: 450px) {
+        margin-left: -18px;
+      }
 
-    .date {
-      margin-top: 7px;
-      font-weight: 700;
-      font-size: 12px;
-      color: #6d7d93;
+      .title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      .date {
+        margin-top: 7px;
+        font-weight: 700;
+        font-size: 12px;
+        color: #6d7d93;
+      }
     }
   }
 }

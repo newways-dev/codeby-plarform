@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import {
-  Avatar,
+  Profile,
   MobileMenu,
   MobileSearch,
   Notification,
@@ -41,7 +41,7 @@ export const Header = ({ className }: HeaderProps) => {
         <div className={styles.options}>
           <Search className={styles.search} />
           <Notification />
-          <Avatar className={styles.avatar} />
+          <Profile className={styles.profile} />
         </div>
       </div>
     </header>

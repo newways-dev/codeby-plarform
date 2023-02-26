@@ -4,17 +4,20 @@ import Image from 'next/image'
 
 import notFound from '../public/images/bg404.png'
 import { Button } from '@/components'
+import Link from 'next/link'
 
 const NotFound = () => {
   return (
     <div className={styles.notFound}>
       <Image src={notFound} alt='' />
       <span className={styles.title}>Страница не найдена</span>
-      <Button
-        className={styles.button}
-        variant='green'
-        text='Вернуться на главную'
-      />
+      <Link href='/'>
+        <Button
+          className={styles.button}
+          variant='green'
+          text='Вернуться на главную'
+        />
+      </Link>
     </div>
   )
 }

@@ -3,9 +3,7 @@ import {
   Line,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
 } from 'recharts'
 
@@ -54,7 +52,7 @@ export const Chart = () => {
     },
     {
       name: 'Сентябрь',
-      uv: 3490,
+      uv: 3130,
       amt: 2100,
     },
     {
@@ -75,7 +73,7 @@ export const Chart = () => {
   ]
 
   return (
-    <ResponsiveContainer width='100%' height={450}>
+    <ResponsiveContainer width='98%' height={450}>
       <LineChart
         width={500}
         height={300}

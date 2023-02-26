@@ -28,7 +28,12 @@ export const TaskDescription = ({
       <p className={styles.desc}>{desc}</p>
       <div className={styles.flag}>
         <div className={styles.inputContainer}>
-          <Input placeholder='Флаг' type='text' className={styles.input} />
+          <Input
+            status='default'
+            placeholder='Флаг'
+            type='text'
+            className={styles.input}
+          />
           <button>Отправить флаг</button>
         </div>
       </div>

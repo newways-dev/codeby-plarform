@@ -15,7 +15,7 @@ export const CompleteCard = ({ className, title, date }: CompleteCardProps) => {
     <div className={clsx(styles.completeCard, className)}>
       <div className={styles.left}>
         <Chart value={90} />
-        <div>
+        <div className={styles.info}>
           <p className={styles.title}>{title}</p>
           <p className={styles.date}>{date}</p>
         </div>
