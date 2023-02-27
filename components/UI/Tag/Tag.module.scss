@@ -12,6 +12,10 @@
   align-items: center;
   justify-content: center;
 
+  @media screen and (max-width: 800px) {
+    padding: 3px 12px;
+  }
+
   p {
     text-align: center;
     font-weight: 500;

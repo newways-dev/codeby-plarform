@@ -18,6 +18,11 @@ export * from './Profile/Activity'
 export * from './Settings'
 
 export * from './Admin/AdminInfo'
+export * from './Admin/UsersList'
+export * from './Admin/AdminNews'
+export * from './Admin/AdminCategories'
+export * from './Admin/AdminTasks'
+export * from './Admin/AddNews'
 
 export * from './Categories/TaskCard'
 export * from './Categories/CategoryCard'

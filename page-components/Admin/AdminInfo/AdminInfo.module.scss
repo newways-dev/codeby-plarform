@@ -9,6 +9,11 @@
     'points pointsChart pointsChart'
     'amount . .';
 
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: auto;
+    grid-template-areas: 'tasks' 'points' 'amount' 'tasksChart' 'pointsChart';
+  }
+
   .tasks {
     grid-area: tasks;
     margin-bottom: 10px;

@@ -3,7 +3,7 @@
   align-items: center;
   margin-top: -20px;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 800px) {
     flex-direction: column;
     justify-content: center;
     margin-top: -50px;
@@ -15,5 +15,9 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 12px;
+
+    @media screen and (max-width: 720px) {
+      gap: 8px;
+    }
   }
 }

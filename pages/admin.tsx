@@ -1,25 +1,54 @@
 import clsx from 'clsx'
-import { FormEvent, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { withLayout } from '@/layout/Layout'
-import { AdminPages } from '@/types/admin'
 import styles from '../styles/Admin.module.scss'
-import { Select } from '@/components'
-import { AdminInfo } from '@/page-components'
+import { IconButton, Select } from '@/components'
+import {
+  AddNews,
+  AdminCategories,
+  AdminInfo,
+  AdminNews,
+  AdminTasks,
+  Card,
+  UsersList,
+} from '@/page-components'
 
 const Admin = () => {
-  const [page, setPage] = useState<AdminPages>('Инфо')
-  const [mobilePage, setMobilePage] = useState<string>('Инфо' as AdminPages)
-  const links = ['Инфо', 'Cписок юзеров']
+  const [add, setAdd] = useState<boolean>(false)
+  const [edit, setEdit] = useState<boolean>(false)
+  const [page, setPage] = useState<string>('Инфо')
+  const [showButtons, setShowButtons] = useState<boolean>(false)
+  const links = [
+    'Инфо',
+    'Cписок юзеров',
+    'Новости',
+    'Категории',
+    'Задания',
+    'Архив',
+  ]
+
+  useEffect(() => {
+    if (page === 'Новости') {
+      setShowButtons(true)
+    } else if (page === 'Категории') {
+      setShowButtons(true)
+    } else if (page === 'Задания') {
+      setShowButtons(true)
+    } else {
+      setShowButtons(false)
+    }
+  }, [page])
 
   return (
     <div className={styles.admin}>
       <div className={styles.mobileToolbar}>
         <Select
-          active={mobilePage}
-          setActive={setMobilePage}
+          type='select'
+          active={page}
+          setActive={setPage}
           variant='black'
           showTitle={false}
-          title={mobilePage}
+          title={page}
           options={links}
         />
       </div>
@@ -32,10 +61,10 @@ const Admin = () => {
             Инфо
           </li>
           <li
-            className={clsx({ [styles.active]: page === 'Список юзеров' })}
-            onClick={() => setPage('Список юзеров')}
+            className={clsx({ [styles.active]: page === 'Cписок юзеров' })}
+            onClick={() => setPage('Cписок юзеров')}
           >
-            Список юзеров
+            Cписок юзеров
           </li>
           <li
             className={clsx({ [styles.active]: page === 'Новости' })}
@@ -62,8 +91,37 @@ const Admin = () => {
             Архив
           </li>
         </ul>
+        {showButtons && (
+          <div className={styles.buttons}>
+            <IconButton
+              onClick={() => {
+                setAdd(!add)
+                setEdit(false)
+              }}
+              type='add'
+            />
+            <IconButton
+              onClick={() => {
+                setEdit(!edit)
+                setAdd(false)
+              }}
+              type='edit'
+            />
+            <IconButton type='delete' />
+          </div>
+        )}
       </div>
+      {page === 'Новости' && add && <AddNews type='add' setAdd={setAdd} />}
+      {page === 'Новости' && edit && <AddNews type='edit' setEdit={setEdit} />}
       {page === 'Инфо' && <AdminInfo />}
+      {page === 'Cписок юзеров' && (
+        <Card title='Список юзеров'>
+          <UsersList />
+        </Card>
+      )}
+      {page === 'Новости' && <AdminNews />}
+      {page === 'Категории' && <AdminCategories />}
+      {page === 'Задания' && <AdminTasks />}
     </div>
   )
 }

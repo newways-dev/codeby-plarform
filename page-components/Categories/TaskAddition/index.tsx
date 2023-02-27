@@ -25,6 +25,7 @@ export const TaskAddition = ({
           <span>{timeLeft}</span>
         </div>
         <Select
+          type='dropdown'
           variant='gray'
           showTitle
           className={styles.files}
@@ -34,6 +35,7 @@ export const TaskAddition = ({
         <div className={styles.help}>
           {help.map((item, index) => (
             <Select
+              type='dropdown'
               variant='gray'
               showTitle
               key={index}

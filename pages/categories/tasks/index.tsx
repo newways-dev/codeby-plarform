@@ -11,6 +11,7 @@ const Tasks = () => {
   return (
     <div className={styles.tasks}>
       <CategoryCard
+        type='user'
         image={task.image}
         title={task.title}
         desc={task.desc}
@@ -19,6 +20,7 @@ const Tasks = () => {
       <div className={styles.taskCards}>
         <Link href='/categories/tasks/task'>
           <TaskCard
+            type='user'
             status='easy'
             title='Безопасный калькулятор'
             desc='Я вроде пофиксил уязвимости, что были в прошлой версии калькулятора...'
@@ -27,6 +29,7 @@ const Tasks = () => {
         </Link>
         <Link href='/categories/tasks/task'>
           <TaskCard
+            type='user'
             status='medium'
             title='Безопасный калькулятор'
             desc='Я вроде пофиксил уязвимости, что были в прошлой версии калькулятора...'
@@ -35,6 +38,7 @@ const Tasks = () => {
         </Link>
         <Link href='/categories/tasks/task'>
           <TaskCard
+            type='user'
             status='hard'
             title='Безопасный калькулятор'
             desc='Я вроде пофиксил уязвимости, что были в прошлой версии калькулятора...'

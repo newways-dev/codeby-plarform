@@ -8,6 +8,8 @@
   align-items: center;
   justify-content: space-between;
 
+  position: relative;
+
   width: 100%;
   cursor: pointer;
 
@@ -96,5 +98,18 @@
         color: var(--gray);
       }
     }
+  }
+
+  .moreButton {
+    z-index: 5000;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .moreOptions {
+    position: absolute;
+    right: 70px;
+    top: 20px;
   }
 }

@@ -11,6 +11,7 @@ const Categories = () => {
         <li key={index}>
           <Link href='/categories/tasks'>
             <CategoryCard
+              type='user'
               image={item.image}
               title={item.title}
               desc={item.desc}

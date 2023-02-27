@@ -1,6 +1,7 @@
+import { IconButton, MoreOptions } from '@/components'
 import clsx from 'clsx'
 import Image, { StaticImageData } from 'next/image'
-import { DetailedHTMLProps, HTMLAttributes } from 'react'
+import { DetailedHTMLProps, HTMLAttributes, useState } from 'react'
 import { Chart } from '../../CompleteCard/Chart'
 import styles from './CategoryCard.module.scss'
 
@@ -10,6 +11,7 @@ export interface CategoryCardProps
   title: string
   desc: string
   value: number
+  type: 'user' | 'admin'
 }
 
 export const CategoryCard = ({
@@ -18,7 +20,10 @@ export const CategoryCard = ({
   title,
   desc,
   value,
+  type,
 }: CategoryCardProps) => {
+  const [showMore, setShowMore] = useState<boolean>(false)
+
   return (
     <div className={clsx(styles.categoryCard, className)}>
       <div className={styles.left}>
@@ -28,13 +33,23 @@ export const CategoryCard = ({
           <span className={styles.desc}>{desc}</span>
         </div>
       </div>
-      <div className={styles.chart}>
-        <Chart value={value} />
-        <span className={styles.complete}>Выполнено:</span>
-        <p>
-          6<span>/20</span>
-        </p>
-      </div>
+      {type === 'user' && (
+        <div className={styles.chart}>
+          <Chart value={value} />
+          <span className={styles.complete}>Выполнено:</span>
+          <p>
+            6<span>/20</span>
+          </p>
+        </div>
+      )}
+      {type === 'admin' && (
+        <IconButton
+          onClick={() => setShowMore(!showMore)}
+          className={styles.moreButton}
+          type='more'
+        />
+      )}
+      {showMore && <MoreOptions className={styles.moreOptions} />}
     </div>
   )
 }

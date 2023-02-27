@@ -1,8 +1,7 @@
-import { Badge } from '@/components'
-import styles from './NewsCard.module.scss'
-
 import clsx from 'clsx'
-import { DetailedHTMLProps, HTMLAttributes } from 'react'
+import { Badge, IconButton, MoreOptions } from '@/components'
+import { DetailedHTMLProps, HTMLAttributes, useState } from 'react'
+import styles from './NewsCard.module.scss'
 
 import Time from '../../public/icons/time.svg'
 
@@ -13,6 +12,7 @@ export interface NewsCardProps
   title: string
   news: string[]
   color: 'black' | 'gray'
+  settings?: boolean
 }
 
 export const NewsCard = ({
@@ -21,7 +21,10 @@ export const NewsCard = ({
   title,
   news,
   color,
+  settings,
 }: NewsCardProps) => {
+  const [showMore, setShowMore] = useState<boolean>(false)
+
   return (
     <div
       className={clsx(
@@ -34,6 +37,14 @@ export const NewsCard = ({
       <div className={styles.badges}>
         <Badge title='Криптография' />
         <Badge title='Реверс-инжиниринг' />
+        {settings && (
+          <IconButton
+            onClick={() => setShowMore(!showMore)}
+            type='more'
+            className={styles.dots}
+          />
+        )}
+        {showMore && <MoreOptions className={styles.moreOptions} />}
       </div>
       <span className={styles.title}>{title}</span>
       <ul>

@@ -15,6 +15,7 @@ const Task = () => {
   return (
     <div className={styles.task}>
       <CategoryCard
+        type='user'
         image={task.image}
         title={task.title}
         desc={task.desc}

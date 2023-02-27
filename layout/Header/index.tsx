@@ -31,6 +31,7 @@ export const Header = ({ className }: HeaderProps) => {
           {route === '/categories' && 'Категории'}
           {route === '/profile' && 'Профиль'}
           {route === '/settings' && 'Настройки'}
+          {route === '/admin' && 'Панель администратора'}
         </span>
         <Menu
           className={styles.menu}

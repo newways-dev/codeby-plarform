@@ -25,6 +25,22 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 20px;
+    position: relative;
+
+    .dots {
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+
+      width: 32px;
+      height: 32px;
+    }
+
+    .moreOptions {
+      top: 35px;
+      position: absolute;
+      right: 0px;
+    }
   }
 
   .title {

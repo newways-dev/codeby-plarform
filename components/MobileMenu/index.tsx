@@ -1,8 +1,6 @@
 import clsx from 'clsx'
 import { DetailedHTMLProps, HTMLAttributes } from 'react'
 import { Sidebar } from '@/layout/Sidebar'
-import { selectMenu } from '@/redux/mobileMenu/selector'
-import { useSelector } from 'react-redux'
 import styles from './MobileMenu.module.scss'
 
 export interface MobileMenuProps

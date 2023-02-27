@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import { topFifty } from '@/helpers/topFifrty'
-import ReactPaginate from 'react-paginate'
-import styles from './TopFifty.module.scss'
 import clsx from 'clsx'
+import { useState } from 'react'
+import { users } from '@/helpers/users'
+import DeleteIcon from '../../../public/icons/delete.svg'
+import ReactPaginate from 'react-paginate'
+import styles from './UsersList.module.scss'
 
-export const TopFifty = () => {
+export const UsersList = () => {
   const [itemOffset, setItemOffset] = useState(0)
   const itemsPerPage = 10
-  const items = topFifty
+  const items = users
 
   const endOffset = itemOffset + itemsPerPage
   const currentItems = items.slice(itemOffset, endOffset)
@@ -19,7 +20,7 @@ export const TopFifty = () => {
   }
 
   return (
-    <div className={styles.topFifty}>
+    <div className={styles.usersList}>
       <div className={styles.top}>
         <span>№</span>
         <span>Логин</span>
@@ -33,10 +34,12 @@ export const TopFifty = () => {
               className={clsx(styles.item, { [styles.oddUser]: item.id % 2 })}
               key={index}
             >
-              <span>{item.id + 1}</span>
+              <span>{item.id}</span>
               <span>{item.login}</span>
-              <span>{item.score}</span>
+              <span>{item.status}</span>
+              <span>{item.points}</span>
               <span>{item.complete}</span>
+              <DeleteIcon />
             </li>
           ))}
       </ul>
