@@ -2,6 +2,7 @@
   .mobileToolbar {
     display: none;
     height: 75px;
+    position: relative;
 
     div {
       p {
@@ -15,6 +16,20 @@
 
     @media screen and (max-width: 950px) {
       display: block;
+    }
+
+    .mobileButtons {
+      position: absolute;
+      right: 12%;
+      top: 6px;
+
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      @media screen and (max-width: 400px) {
+        right: 15%;
+      }
     }
   }
 

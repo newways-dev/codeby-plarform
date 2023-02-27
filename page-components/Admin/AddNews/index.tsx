@@ -57,7 +57,11 @@ export const AddNews = ({ className, setAdd, setEdit, type }: AddNewsProps) => {
           />
           <DeleteTag />
         </div>
-        <IconButton onClick={handleAddTag} type='plus' />
+        <IconButton
+          className={styles.plus}
+          onClick={handleAddTag}
+          type='plus'
+        />
       </div>
       <div className={styles.inputs}>
         <Input

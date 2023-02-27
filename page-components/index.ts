@@ -23,6 +23,7 @@ export * from './Admin/AdminNews'
 export * from './Admin/AdminCategories'
 export * from './Admin/AdminTasks'
 export * from './Admin/AddNews'
+export * from './Admin/AddCategory'
 
 export * from './Categories/TaskCard'
 export * from './Categories/CategoryCard'

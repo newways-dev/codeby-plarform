@@ -24,6 +24,10 @@
       color: var(--green);
     }
 
+    .plus {
+      z-index: 4000;
+    }
+
     .newTag {
       display: flex;
       align-items: center;
@@ -79,6 +83,11 @@
     display: flex;
     align-items: center;
     gap: 33px;
+
+    @media screen and (max-width: 450px) {
+      flex-direction: column-reverse;
+      gap: 16px;
+    }
 
     .publish {
       width: 200px;

@@ -4,6 +4,7 @@ import { withLayout } from '@/layout/Layout'
 import styles from '../styles/Admin.module.scss'
 import { IconButton, Select } from '@/components'
 import {
+  AddCategory,
   AddNews,
   AdminCategories,
   AdminInfo,
@@ -51,6 +52,25 @@ const Admin = () => {
           title={page}
           options={links}
         />
+        {showButtons && (
+          <div className={styles.mobileButtons}>
+            <IconButton
+              onClick={() => {
+                setAdd(!add)
+                setEdit(false)
+              }}
+              type='add'
+            />
+            <IconButton
+              onClick={() => {
+                setEdit(!edit)
+                setAdd(false)
+              }}
+              type='edit'
+            />
+            <IconButton type='delete' />
+          </div>
+        )}
       </div>
       <div className={styles.toolbar}>
         <ul>
@@ -113,6 +133,12 @@ const Admin = () => {
       </div>
       {page === 'Новости' && add && <AddNews type='add' setAdd={setAdd} />}
       {page === 'Новости' && edit && <AddNews type='edit' setEdit={setEdit} />}
+      {page === 'Категории' && add && (
+        <AddCategory type='add' setAdd={setAdd} />
+      )}
+      {page === 'Категории' && edit && (
+        <AddCategory type='edit' setEdit={setEdit} />
+      )}
       {page === 'Инфо' && <AdminInfo />}
       {page === 'Cписок юзеров' && (
         <Card title='Список юзеров'>
