@@ -9,22 +9,17 @@ import {
 import { Button, Input } from '@/components'
 import ImageUploading, { ImageListType } from 'react-images-uploading'
 import UploadImage from '../../../public/icons/upload-image.svg'
-import styles from './AddCategory.module.scss'
+import styles from './AddTask.module.scss'
 import Image from 'next/image'
 
-export interface AddCategoryProps
+export interface AddTaskProps
   extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   setAdd?: Dispatch<SetStateAction<boolean>>
   setEdit?: Dispatch<SetStateAction<boolean>>
   type: 'add' | 'edit'
 }
 
-export const AddCategory = ({
-  className,
-  setAdd,
-  setEdit,
-  type,
-}: AddCategoryProps) => {
+export const AddTask = ({ className, setAdd, setEdit, type }: AddTaskProps) => {
   const [title, setTitle] = useState<string>('')
   const [desc, setDesc] = useState<string>('')
   const [image, setImage] = useState([])
@@ -48,7 +43,7 @@ export const AddCategory = ({
   }
 
   return (
-    <div className={clsx(styles.addCategory, className)}>
+    <div className={clsx(styles.addTask, className)}>
       <div className={styles.inputs}>
         <ImageUploading
           multiple
@@ -129,7 +124,7 @@ export const AddCategory = ({
           onClick={() => setAdd && setAdd(false)}
           className={styles.publish}
           variant='green'
-          text={type === 'edit' ? 'Сохранить изменения' : 'Добавить категорию'}
+          text={type === 'edit' ? 'Сохранить изменения' : 'Создать задание'}
         />
         <button onClick={handleCancel} className={styles.cancel}>
           Отменить

@@ -6,6 +6,7 @@ import { IconButton, Select } from '@/components'
 import {
   AddCategory,
   AddNews,
+  AddTask,
   AdminCategories,
   AdminInfo,
   AdminNews,
@@ -139,6 +140,8 @@ const Admin = () => {
       {page === 'Категории' && edit && (
         <AddCategory type='edit' setEdit={setEdit} />
       )}
+      {page === 'Задания' && add && <AddTask setAdd={setAdd} type='add' />}
+      {page === 'Задания' && edit && <AddTask setEdit={setEdit} type='edit' />}
       {page === 'Инфо' && <AdminInfo />}
       {page === 'Cписок юзеров' && (
         <Card title='Список юзеров'>
