@@ -9,7 +9,7 @@ export interface InputProps
   > {
   title?: string
   placeholder?: string
-  type: 'text' | 'textarea' | 'email' | 'password'
+  type: 'text' | 'textarea' | 'email' | 'password' | 'file'
   desc?: string
   status: 'default' | 'true' | 'false'
   value: string | number
@@ -43,7 +43,7 @@ export const Input = ({
           placeholder={placeholder}
         />
       )}
-      {type === 'textarea' && <textarea placeholder={placeholder}></textarea>}
+      {type === 'textarea' && <textarea placeholder={placeholder} />}
     </div>
   )
 }

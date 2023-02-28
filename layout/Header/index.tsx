@@ -8,6 +8,7 @@ import {
   Search,
 } from '@/components'
 import Menu from '../../public/icons/menu.svg'
+import BellCircle from '../../public/icons/bell-circle.svg'
 import styles from './Header.module.scss'
 import { selectMenu } from '@/redux/mobileMenu/selector'
 import { useDispatch, useSelector } from 'react-redux'
@@ -41,7 +42,10 @@ export const Header = ({ className }: HeaderProps) => {
         <MobileSearch className={styles.mobileSearch} />
         <div className={styles.options}>
           <Search className={styles.search} />
-          <Notification />
+          <div className={styles.notification}>
+            <Notification />
+            <BellCircle className={styles.circle} />
+          </div>
           <Profile className={styles.profile} />
         </div>
       </div>

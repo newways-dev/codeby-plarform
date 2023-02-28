@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes, useState } from 'react'
+import { DetailedHTMLProps, FormEvent, HTMLAttributes, useState } from 'react'
 import { Card } from '@/page-components'
 import clsx from 'clsx'
 import { Input } from '../UI/Input'
@@ -15,9 +15,21 @@ export const Modal = ({ className }: ModalProps) => {
   const types = ['Docker', 'Файлы']
   const [title, setTitle] = useState<string>('')
   const [ports, setPorts] = useState<string>('')
-  const [heading, setHeading] = useState<string>('')
+  const [file, setFile] = useState<string>('')
   const [type, setType] = useState<string>(types[0])
   const dispatch = useDispatch()
+
+  let fileData = new FormData()
+
+  const onChangeFile = (e: FormEvent<HTMLInputElement>) => {
+    const input = e.target as HTMLInputElement
+    if (!input.files?.length) {
+      return
+    }
+    fileData.append('file', input.files[0])
+  }
+
+  const uploadFile = () => {}
 
   return (
     <div className={clsx(styles.modalWrapper, className)}>
@@ -63,11 +75,12 @@ export const Modal = ({ className }: ModalProps) => {
                 title='Заголовок'
                 placeholder='Выберите материалы'
                 status='default'
-                type='text'
-                value={heading}
-                onChange={(e) => setHeading(e.currentTarget.value)}
+                type='file'
+                value={file}
+                onChange={(e) => setFile(e.currentTarget.value)}
               />
               <Button
+                onClick={uploadFile}
                 className={styles.upload}
                 text='Загрузить'
                 variant='white'
