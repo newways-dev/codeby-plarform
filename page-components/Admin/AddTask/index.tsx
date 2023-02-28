@@ -6,9 +6,10 @@ import {
   HTMLAttributes,
   SetStateAction,
 } from 'react'
-import { Button, Input } from '@/components'
+import { Button, Input, RadioInput, Select } from '@/components'
 import ImageUploading, { ImageListType } from 'react-images-uploading'
 import UploadImage from '../../../public/icons/upload-image.svg'
+import Add from '../../../public/icons/plus.svg'
 import styles from './AddTask.module.scss'
 import Image from 'next/image'
 
@@ -19,10 +20,28 @@ export interface AddTaskProps
   type: 'add' | 'edit'
 }
 
+const categories = [
+  'Администрирование',
+  'Криптография',
+  'Форензика',
+  'Развлечения',
+  'Реверс-инжиниринг ',
+  'Стеганография',
+  'Веб',
+  'PWN',
+  'Квест',
+]
+
 export const AddTask = ({ className, setAdd, setEdit, type }: AddTaskProps) => {
-  const [title, setTitle] = useState<string>('')
-  const [desc, setDesc] = useState<string>('')
   const [image, setImage] = useState([])
+  const [visibility, setVisibility] = useState<boolean>(false)
+  const [category, setCategory] = useState<string>('Выберите категорию')
+  const [points, setPoints] = useState<string>('')
+  const [flag, setFlag] = useState<string>('')
+  const [name, setName] = useState<string>('')
+  const [desc, setDesc] = useState<string>('')
+  const [help, setHelp] = useState<string>('')
+  const [helps, setHelps] = useState<string[]>([])
   const maxNumber = 1
 
   const handleCancel = () => {
@@ -40,6 +59,13 @@ export const AddTask = ({ className, setAdd, setEdit, type }: AddTaskProps) => {
   ) => {
     console.log(imageList, addUpdateIndex)
     setImage(imageList as never[])
+  }
+
+  const handleAddHelp = () => {
+    if (help !== '') {
+      setHelps(helps.concat(help))
+    }
+    setHelp('')
   }
 
   return (
@@ -69,7 +95,7 @@ export const AddTask = ({ className, setAdd, setEdit, type }: AddTaskProps) => {
                 >
                   <UploadImage />
                 </button>
-                <span className={styles.uploadText}>Загрузите изображение</span>
+                <span className={styles.uploadText}>Загрузите иконку</span>
               </div>
               &nbsp;
               {imageList.map((image, index) => (
@@ -100,24 +126,98 @@ export const AddTask = ({ className, setAdd, setEdit, type }: AddTaskProps) => {
             </div>
           )}
         </ImageUploading>
-        <Input
-          className={styles.title}
-          onChange={(e) => setTitle(e.currentTarget.value)}
-          status='default'
-          value={title}
-          type='text'
-          placeholder='Введите заголовок'
-          title='Заголовок'
-        />
-        <Input
-          className={styles.desc}
-          onChange={(e) => setDesc(e.currentTarget.value)}
-          value={desc}
-          status='default'
-          type='textarea'
-          placeholder='Введите описание категории'
-          title='Описание'
-        />
+        <span className={styles.visibility}>Видимость</span>
+        <div className={styles.radioContainer}>
+          <RadioInput
+            checked={visibility === true}
+            text='Видна'
+            onChange={() => setVisibility(!visibility)}
+          />
+          <RadioInput
+            checked={visibility === false}
+            text='Не видна'
+            onChange={() => setVisibility(!visibility)}
+          />
+        </div>
+        <div className={styles.fields}>
+          <div className={styles.left}>
+            <div className={styles.category}>
+              <span className={styles.categoryTitle}>Категория</span>
+              <Select
+                className={styles.select}
+                active={category}
+                setActive={setCategory}
+                showTitle={false}
+                placeholder='Выберите категорию'
+                type='select'
+                variant='gray'
+                options={categories}
+                title='Категория'
+              />
+            </div>
+            <Input
+              className={styles.name}
+              onChange={(e) => setName(e.currentTarget.value)}
+              value={name}
+              status='default'
+              type='text'
+              placeholder='Введите название'
+              title='Название'
+            />
+            <Input
+              className={styles.desc}
+              onChange={(e) => setDesc(e.currentTarget.value)}
+              value={desc}
+              status='default'
+              type='textarea'
+              placeholder='Введите описание'
+              title='Описание'
+            />
+          </div>
+          <div className={styles.right}>
+            <Input
+              className={styles.points}
+              onChange={(e) => setPoints(e.currentTarget.value)}
+              value={points}
+              status='default'
+              type='text'
+              placeholder='Введите'
+              title='Очки за выполнение'
+            />
+            <Input
+              className={styles.flag}
+              onChange={(e) => setFlag(e.currentTarget.value)}
+              value={flag}
+              status='default'
+              type='text'
+              placeholder='Введите'
+              title='Верный флаг'
+            />
+            <div className={styles.helpOne}>
+              <Input
+                onChange={(e) => setHelp(e.currentTarget.value)}
+                value={help}
+                status='default'
+                type='text'
+                placeholder='Введите'
+                title='Подсказка'
+              />
+              {helps.length > 0 &&
+                helps.map((item, index) => (
+                  <Input
+                    type='text'
+                    status='default'
+                    onChange={() => {}}
+                    key={index}
+                    value={item}
+                  />
+                ))}
+              <button onClick={() => handleAddHelp()} className={styles.add}>
+                <Add /> Добавить
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       <div className={styles.buttons}>
         <Button

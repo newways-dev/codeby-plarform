@@ -7,7 +7,7 @@ export interface ButtonProps
     HTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  variant: 'green' | 'white'
+  variant: 'green' | 'white' | 'red'
   text: string
 }
 
@@ -27,6 +27,15 @@ export const Button = ({ className, variant, text, ...props }: ButtonProps) => {
         <button
           {...props}
           className={clsx(className, styles.button, styles.white)}
+        >
+          {text}
+        </button>
+      )
+    case 'red':
+      return (
+        <button
+          {...props}
+          className={clsx(className, styles.button, styles.red)}
         >
           {text}
         </button>

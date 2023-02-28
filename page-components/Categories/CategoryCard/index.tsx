@@ -49,7 +49,13 @@ export const CategoryCard = ({
           type='more'
         />
       )}
-      {showMore && <MoreOptions className={styles.moreOptions} />}
+      {showMore && (
+        <MoreOptions
+          setOpen={setShowMore}
+          tasks={false}
+          className={styles.moreOptions}
+        />
+      )}
     </div>
   )
 }

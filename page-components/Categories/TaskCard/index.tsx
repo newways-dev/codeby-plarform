@@ -59,7 +59,13 @@ export const TaskCard = ({
               onClick={() => setShowOptions(!showOptions)}
               type='more'
             />
-            {showOptions && <MoreOptions className={styles.moreOptions} />}
+            {showOptions && (
+              <MoreOptions
+                setOpen={setShowOptions}
+                tasks
+                className={styles.moreOptions}
+              />
+            )}
           </div>
           <p className={styles.title}>{title}</p>
           <p className={styles.desc}>{desc}</p>

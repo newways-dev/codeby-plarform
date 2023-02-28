@@ -44,7 +44,13 @@ export const NewsCard = ({
             className={styles.dots}
           />
         )}
-        {showMore && <MoreOptions className={styles.moreOptions} />}
+        {showMore && (
+          <MoreOptions
+            setOpen={setShowMore}
+            tasks={false}
+            className={styles.moreOptions}
+          />
+        )}
       </div>
       <span className={styles.title}>{title}</span>
       <ul>

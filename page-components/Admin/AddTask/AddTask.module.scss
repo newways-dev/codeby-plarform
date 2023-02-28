@@ -5,51 +5,8 @@
   margin: 16px 0;
   width: 100%;
 
-  .tags {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-
-    .tag {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 12px;
-
-      border-radius: 10px;
-      background: rgba(136, 204, 20, 0.3);
-      min-height: 35px;
-      height: 35px;
-      color: var(--green);
-    }
-
-    .plus {
-      z-index: 4000;
-    }
-
-    .newTag {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 12px;
-
-      border-radius: 10px;
-      background: rgba(136, 204, 20, 0.3);
-      min-height: 35px;
-      height: 35px;
-
-      input {
-        max-width: 100px;
-        font-weight: 400;
-        font-size: 15px;
-        color: var(--green);
-
-        border: 0;
-        outline: 0;
-        background: none;
-      }
-    }
+  @media screen and (max-width: 1000px) {
+    padding: 15px;
   }
 
   .inputs {
@@ -60,6 +17,84 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+
+    .uploadContainer {
+      margin-bottom: 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+
+      @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .uploadWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .uploadText {
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--gray);
+      }
+
+      .uploadHere {
+        cursor: pointer;
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+        background: var(--background-secondary);
+        border: 1px dashed #6d7d93;
+
+        svg {
+          height: 36px;
+          width: 36px;
+        }
+      }
+
+      .image {
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+      }
+
+      .updateButton {
+        cursor: pointer;
+        border: 0;
+        background: none;
+        color: var(--green);
+        font-weight: 700;
+        font-size: 14px;
+
+        margin-right: 20px;
+        margin-top: 10px;
+      }
+      .removeButton {
+        cursor: pointer;
+        border: 0;
+        background: none;
+        color: var(--gray);
+        font-weight: 700;
+        font-size: 14px;
+      }
+    }
+
+    .visibility {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 23px;
+    }
+
+    .radioContainer {
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
 
     .title {
       width: 100%;
@@ -79,6 +114,105 @@
     }
   }
 
+  .fields {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 26px;
+
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    .left,
+    .right {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .left {
+      .category {
+        .categoryTitle {
+          margin-bottom: 22px;
+        }
+        .select {
+          margin-top: 4px;
+          z-index: 7000;
+
+          ul {
+            margin-top: 4px;
+            background: #f9f9fa;
+            color: #1a1c22;
+            padding: 0px;
+
+            li {
+              padding: 10px;
+              font-weight: 400;
+              font-size: 14px;
+
+              border-bottom: 1px solid rgba(109, 125, 147, 0.15);
+            }
+          }
+        }
+
+        grid-area: category;
+      }
+
+      .name {
+        grid-area: name;
+      }
+
+      .desc {
+        grid-area: desc;
+      }
+    }
+
+    .right {
+      .points {
+        grid-area: points;
+      }
+      .flag {
+        grid-area: flag;
+      }
+      .helpOne {
+        grid-area: helpOne;
+
+        button {
+          margin-top: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+
+          width: 120px;
+          height: 35px;
+
+          cursor: pointer;
+          border: 0;
+          font-weight: 400;
+          font-size: 15px;
+          color: #6d7d93;
+          background-color: var(--background-secondary);
+          border-radius: 7px;
+
+          svg {
+            margin-top: 2px;
+            path {
+              stroke: #6d7d93;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .buttons {
     display: flex;
     align-items: center;
@@ -90,7 +224,7 @@
     }
 
     .publish {
-      width: 200px;
+      width: 240px;
     }
 
     .cancel {
