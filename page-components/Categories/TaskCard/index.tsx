@@ -41,12 +41,8 @@ export const TaskCard = ({
           <p className={styles.title}>{title}</p>
           <p className={styles.desc}>{desc}</p>
           <div className={styles.bottom}>
-            {check && (
-              <>
-                <button>Подробнее</button>
-                <Check check={check} />
-              </>
-            )}
+            <button>Подробнее</button>
+            <Check check={check ? check : false} />
           </div>
         </div>
       )
