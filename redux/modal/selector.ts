@@ -1,3 +1,3 @@
 import { RootState } from '../store'
 
-export const selectModal = (state: RootState) => state.modal
+export const selectOpenUpload = (state: RootState) => state.modal.openUpload

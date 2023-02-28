@@ -1,23 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface ModalSliceState {
-  openModal: boolean
+  openUpload: boolean
 }
 
 const initialState: ModalSliceState = {
-  openModal: false,
+  openUpload: false,
 }
 
 const modalSlice = createSlice({
   name: 'modal',
   initialState: initialState,
   reducers: {
-    setModal: (state, action: PayloadAction<boolean>) => {
-      state.openModal = action.payload
+    setOpenUpload: (state, action: PayloadAction<boolean>) => {
+      state.openUpload = action.payload
     },
   },
 })
 
-export const { setModal } = modalSlice.actions
+export const { setOpenUpload } = modalSlice.actions
 
 export default modalSlice.reducer
