@@ -5,6 +5,7 @@ import { DetailedHTMLProps, HTMLAttributes, useEffect, useState } from 'react'
 import CloseIcon from '../../public/icons/close.svg'
 import Logo from './icons/logo.svg'
 import MiniLogo from './icons/mini-logo.svg'
+import DasboardActive from './icons/dashboard-active.svg'
 import { routes } from './routes'
 import { setOpen as setOpenMenu } from '@/redux/mobileMenu/slice'
 
@@ -94,7 +95,9 @@ export const Sidebar = ({ className }: SidebarProps) => {
                   route === routes[0].path && styles.activeRouteIcon
                 )}
               >
-                {routes[0].icon}
+                {/* {routes[0].icon} */}
+                {route === '/' && <DasboardActive />}
+                {route !== '/' && routes[0].icon}
               </div>
               {open && <p>{routes[0].name}</p>}
               <div
