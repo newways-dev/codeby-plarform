@@ -86,7 +86,21 @@ export const Chart = () => {
         barSize={16}
       >
         <YAxis />
-        <Tooltip />
+        <Tooltip
+          itemStyle={{ fontSize: '16px' }}
+          labelStyle={{ display: 'none' }}
+          wrapperStyle={{
+            outline: 'none',
+            background: '#282c35',
+            borderRadius: '7px',
+          }}
+          contentStyle={{
+            backgroundColor: 'none',
+            background: 'none',
+            border: 0,
+          }}
+          cursor={{ fill: 'transparent' }}
+        />
         <Bar dataKey='pv' fill='#9fef00' />
       </BarChart>
     </ResponsiveContainer>

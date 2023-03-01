@@ -286,11 +286,18 @@ export const Sidebar = ({ className }: SidebarProps) => {
               onClick={() => {
                 openMenu && dispatch(setOpenMenu(false))
               }}
-              className={clsx({ [styles.mobileSidebarRoute]: openMenu })}
             >
-              <Link href={routes[6].path} className={clsx(styles.link)}>
+              <Link
+                href={routes[6].path}
+                className={clsx(
+                  styles.link,
+
+                  { [styles.mobileSidebarRoute]: openMenu }
+                )}
+              >
                 <div>{routes[6].icon}</div>
                 {open && <p>{routes[6].name}</p>}
+                <div />
               </Link>
             </li>
           </div>
